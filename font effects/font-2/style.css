@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Long+Cang|Poppins&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins','Long Cang',sans-serif;
+}
+
+h1
+{
+    font-size: 10em;
+    line-height: 0.8em;
+}
+h1 span
+{
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+}
+
+h1 span:nth-child(1):before
+{
+    content: '';
+    position: absolute;
+    top: calc(50% - 11px);
+    right: -8px;
+    height: 22px;
+    width: 50%;
+    background: red;
+    transition: 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: 1;
+}
+
+h1:hover span:nth-child(1):before
+{
+    transform: scaleX(1);
+}
+
+h1 span:nth-child(2):before
+{
+    content: '';
+    position: absolute;
+    top: calc(50% - 11px);
+    left: 0;
+    height: 22px;
+    width: 50%;
+    background: red;
+    transition: 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 1;
+}
+
+h1:hover span:nth-child(2):before
+{
+    transform: scaleX(1);
+}
+h1 span hide
+{
+    transition: .5s;
+    transition-delay: 1s;
+}
+h1:hover span hide
+{
+    transition-delay: 1s;
+    color: red;
+    opacity: 0;
+}
+h1:hover span:nth-child(1) hide
+{
+    padding-right: 30px;
+}
+h1:hover span:nth-child(2) hide
+{
+    padding-left: 40px;
+}

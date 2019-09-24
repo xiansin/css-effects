@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins',sans-serif;
+    background: #f3f3f3;
+}
+
+.box
+{
+    position: relative;
+    width: 800px;
+}
+
+.box h1
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12em;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.box h1:nth-child(2)
+{
+    overflow: hidden;
+    transition: .5s;
+    background: #f3f3f3;
+    color: #ffffff;
+    z-index: 2;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+}
+
+
+.box h1:nth-child(2):hover
+{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.box h1:nth-child(1):hover ~ h1
+{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}

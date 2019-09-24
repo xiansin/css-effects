@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Long+Cang|Poppins&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Poppins','Long Cang',sans-serif;
+}
+
+h1
+{
+    position: relative;
+    font-size: 12em;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    writing-mode:tb-rl;
+}
+
+h1:before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    text-shadow: -5px 5px 20px #000,
+                 -10px 10px 30px #000,
+                 -20px 15px 40px #000,
+                 -25px 20px 50px #000;
+
+}
+
+
