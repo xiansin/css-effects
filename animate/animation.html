@@ -12,6 +12,7 @@
 	<!-- animation-iteration-count: 动画播放次数 num | infinite -->
 	<!-- animation-play-status:动画播放状态 paused | running -->
 	<!-- animation-fill-mode:动画播放之前/之后，效果是否可见 none|forwards|backwards|both -->
+    <!--animation-direction: 是否反向执行 normal|reverse|alternate|alternate-reverse|initial|inherit;-->
 
 <style type="text/css">
 	body
@@ -27,15 +28,10 @@
 		width: 100px;
 		height: 40px;
 		background: #fff;
-		transition: width 5s;
-	}
-	.animation:hover
-	{
-		/* animation-name: animation;
-		animation-duration: 5s;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite; */
-		
+        animation-name: animation;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
 	}
 	@keyframes animation
 	{
@@ -65,10 +61,67 @@
 			background: #fff;
 		}
 	}
+    
+    .box
+    {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: red;
+        animation-name: box-animate;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    @keyframes box-animate {
+        0%
+        {
+            top: 0;
+            left: 0;
+            background: #ff0000;
+        }
+        
+        25%
+        {
+            top: 0;
+            left: 300px;
+            background: #00b0ff;
+            border-radius: 200px 0 0 0;
+        }
+        
+        50%
+        {
+            top: 300px;
+            left: 300px;
+            background: #9c27b0;
+            border-radius: 200px 200px 0 0;
+        }
+        
+        75%
+        {
+            top: 300px;
+            left: 0;
+            background: #ff006a;
+            border-radius: 200px 200px 200px 0;
+        }
+        
+        100%
+        {
+            top: 0;
+            left: 0;
+            background: #ff0000;
+            border-radius: 200px 200px 200px 200px;
+        }
+    }
+    
 </style>
 <body>
 
-	<div class="animation"></div>
+	<!--<div class="animation"></div>-->
 
+
+    <div class="box"></div>
 </body>
 </html>
