@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--transition-property:指定过渡效果 none|all| property-->
+<!--transition-duration:动画持续时间-->
+<!--transition-time-function:指定切换效果的速度。linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)-->
+<!--transition-delay:动画延迟-->
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background: #333333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+        transition: .5s cubic-bezier(.09,.55,.25,.83);
+        background: red;
+    }
+    .box:hover{
+        border-radius: 50%;
+        background: #ffffff;
+    }
+</style>
+<body>
+<div class="box"></div>
+</body>
+</html>
