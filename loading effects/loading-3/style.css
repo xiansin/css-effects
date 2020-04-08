@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ededed;
+}
+.loading{
+    width: 160px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.loading span{
+    display: block;
+    bottom: 0;
+    width: 10px;
+    height: 100%;
+    margin-right: 10px;
+    background: #000000;
+    animation: animate 1s linear infinite;
+
+}
+@keyframes animate {
+    0%, 100%{
+        height: 100%;
+    }
+    20%,80%{
+        height: 75%;
+    }
+    40%,60%{
+        height: 50%;
+    }
+    50%{
+        height: 25%;
+    }
+}
+
+.loading span:nth-child(1){
+    background: #f9ca24;
+}
+.loading span:nth-child(2){
+    background: #f0932b;
+    animation-delay: .125s;
+}
+.loading span:nth-child(3){
+    background: #eb4d4b;
+    animation-delay: .25s;
+}
+.loading span:nth-child(4){
+    background: #6ab04c;
+    animation-delay: 0.375s;
+}
+.loading span:nth-child(5){
+    background: #badc58;
+    animation-delay: 0.5s;
+}
+.loading span:nth-child(6){
+    background: #7ed6df;
+    animation-delay: 0.625s;
+}
+.loading span:nth-child(7){
+    background: #e056fd;
+    animation-delay: 0.75s;
+}
+.loading span:nth-child(8){
+    background: #ffbe76;
+    animation-delay: 0.875s;
+}

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #68A3FF;
+}
+
+.clock{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid #DEDCDC;
+    box-shadow: 0 1px 15px rgba(0,0,0,.4);
+    padding: 40px;
+}
+.clock:before{
+    content: '';
+    position: absolute;
+    border: 25px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 25px inset rgba(0,0,0,.1);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.clock:after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #828484;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #fff;
+}
+
+.clock .needle{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 50%;
+    padding: 40px;
+}
+.clock .needle .hour,
+.clock .needle .minute,
+.clock .needle .second{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.clock .needle .hour{
+    background: #858486;
+    width: 6px;
+    height: 40%;
+}
+.clock .needle .minute{
+    background: #D6D5D6;
+    width: 4px;
+    height: 45%;
+}
+.clock .needle .second{
+    background: #E47173;
+    width: 2px;
+    height: 50%;
+    transform: rotate(30deg) translateX(18px);
+}
+
+.clock .number{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 50%;
+    padding: 40px;
+}
+.clock .number span{
+    position: absolute;
+    text-indent: -9999px;
+    width: 3px;
+    height: 15px;
+    background: #666;
+}
+.clock .number span:nth-child(3n){
+    text-indent: 0;
+    font-size: 22px;
+    font-weight: 600;
+    background:transparent;
+}
+
+.clock .number span:nth-child(n){
+    left: 80px;
+}
