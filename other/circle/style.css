@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #353b48;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle{
+    width: 65vw;
+    height: 65vw;
+    border-radius: 50%;
+    background: #2f3640;
+    box-shadow:
+            0 -10px 20px rgba(104, 109, 224, 0.68),/*上*/
+            -10px 0 20px rgba(235, 77, 75, 0.68),/*左*/
+            0 10px 20px rgba(249, 202, 36, 0.68), /*下*/
+            10px 0 20px rgba(224, 86, 253, 0.68);/*右*/
+    animation: shadow 2s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle h1{
+    font-size: 4.6em;
+    color: #7f7f7f;
+    position: relative;
+}
+.circle h1:after{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+   : 0;
+    width: 100%;
+    background: linear-gradient(to left,rgba(104, 109, 224, 0.68),rgba(235, 77, 75, 0.68),rgba(249, 202, 36, 0.68),rgba(224, 86, 253, 0.68));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background: linear-gradient(to left,rgba(104, 109, 224, 0.68),rgba(235, 77, 75, 0.68),rgba(249, 202, 36, 0.68),rgba(224, 86, 253, 0.68));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    25%{ background: linear-gradient(to left,rgba(235, 77, 75, 0.68),rgba(249, 202, 36, 0.68),rgba(224, 86, 253, 0.68),rgba(104, 109, 224, 0.68));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    50%{  background: linear-gradient(to left,rgba(249, 202, 36, 0.68),rgba(224, 86, 253, 0.68),rgba(104, 109, 224, 0.68),rgba(235, 77, 75, 0.68));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    75%{
+        background: linear-gradient(to left,rgba(224, 86, 253, 0.68),rgba(104, 109, 224, 0.68),rgba(235, 77, 75, 0.68),rgba(249, 202, 36, 0.68));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    100%{
+        background: linear-gradient(to left,rgba(104, 109, 224, 0.68),rgba(235, 77, 75, 0.68),rgba(249, 202, 36, 0.68),rgba(224, 86, 253, 0.68));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+
+@keyframes shadow {
+    0% {
+        box-shadow:
+                0 -10px 20px rgba(104, 109, 224, 0.68),/*上*/
+                -10px 0 20px rgba(235, 77, 75, 0.68),/*左*/
+                0 10px 20px rgba(249, 202, 36, 0.68), /*下*/
+                10px 0 20px rgba(224, 86, 253, 0.68);/*右*/
+    }
+    25%{
+        box-shadow:
+                0 -10px 20px rgba(235, 77, 75, 0.68),/*上*/
+                -10px 0 20px rgba(249, 202, 36, 0.68),/*左*/
+                0 10px 20px rgba(224, 86, 253, 0.68), /*下*/
+                10px 0 20px rgba(104, 109, 224, 0.68);/*右*/
+    }
+    50%{
+        box-shadow:
+                0 -10px 20px rgba(249, 202, 36, 0.68),/*上*/
+                -10px 0 20px rgba(224, 86, 253, 0.68),/*左*/
+                0 10px 20px rgba(104, 109, 224, 0.68), /*下*/
+                10px 0 20px rgba(235, 77, 75, 0.68);/*右*/
+
+    }
+    75%{
+        box-shadow:
+                0 -10px 20px rgba(224, 86, 253, 0.68),/*上*/
+                -10px 0 20px rgba(104, 109, 224, 0.68),/*左*/
+                0 10px 20px rgba(235, 77, 75, 0.68), /*下*/
+                10px 0 20px rgba(249, 202, 36, 0.68);/*右*/
+    }
+    100%{
+        box-shadow:
+                0 -10px 20px rgba(104, 109, 224, 0.68),/*上*/
+                -10px 0 20px rgba(235, 77, 75, 0.68),/*左*/
+                0 10px 20px rgba(249, 202, 36, 0.68), /*下*/
+                10px 0 20px rgba(224, 86, 253, 0.68);/*右*/
+    }
+
+}
