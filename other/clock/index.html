@@ -2,32 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>时间</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-<div class="clock">
-    <div class="needle">
-        <div class="hour"></div>
-        <div class="minute"></div>
-        <div class="second"></div>
-    </div>
-    <div class="number">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>11</span>
-        <span>12</span>
-    </div>
+<div class="time-box">
+    <span class="center-point"></span>
+    <span class="needle hour"></span>
+    <span class="needle min"></span>
+    <span class="needle sec"></span>
+    <div class="plate"></div>
 </div>
+<script>
+    window.onload = function () {
+        let $plate = document.querySelector(".plate")
+        let $timeBox = document.querySelector(".time-box")
+        let $centerPoint = document.querySelector(".center-point")
+        let radius = ($timeBox.clientWidth-100) / 2;
+        let dotLeft = ($timeBox.clientWidth - $centerPoint.clientWidth) / 2 - 30;
+        //中心点纵坐标
+        let dotTop = ($timeBox.clientHeight - $centerPoint.clientHeight) / 2 - 40;
+        //起始角度
+        //每一个BOX对应的角度;
+        let avd = 360 / 12;
+        let ahd = avd * Math.PI / 180;
+        let arr = ['Ⅴ', 'Ⅳ', 'Ⅲ', 'Ⅱ', 'Ⅰ', 'Ⅻ', 'Ⅺ', 'Ⅹ', 'Ⅸ', 'Ⅷ', 'Ⅶ', 'Ⅵ']
+        arr.forEach((value, i) => {
+            let index = i + 1;
+            let child = document.createElement("span")
+            child.innerText = value;
+            child.style.left = Math.sin((ahd * index)) * radius + dotLeft + 'px';
+            child.style.top = Math.cos((ahd * index)) * radius + dotTop + 'px';
+            let rotate = 150 - i * 30;
+            child.style.transform = `translateX(-30%) rotate(${rotate}deg)`;
+            $plate.appendChild(child)
+        })
+
+        initTime()
+
+        setInterval(initTime, 1000)
+    }
+
+    function initTime() {
+        let $hour = document.querySelector(".hour")
+        let $min = document.querySelector(".min")
+        let $sec = document.querySelector(".sec")
+        let date = new Date();
+        let sec = date.getSeconds()
+        let min = date.getMinutes()
+        let hour = date.getHours() % 12
+
+
+        let hourRotate = hour * 30 - 90 + (min * 30 / 60) + (sec * 30 / 60 / 60);
+        $hour.style.transform = `translateY(-50%) rotate(${hourRotate}deg)`;
+
+        let minRotate = min * 6 - 90 + (sec * 30 / 360);
+        $min.style.transform = `translateY(-50%) rotate(${minRotate}deg)`;
+
+        let secRotate = sec * 6 - 90;
+        $sec.style.transform = `translateY(-50%) rotate(${secRotate}deg)`;
+    }
+</script>
 </body>
 </html>
