@@ -64,15 +64,15 @@ body{
     transition: 1s linear;
 }
 .time-box .needle.hour{
-    width: 20%;
-    height: 6px;
+    width: 15%;
+    height: 10px;
     background: #858486;
 }
 
 .time-box .needle.min{
-    width: 28%;
-    height: 4px;
-    background: #D6D5D6;
+    width: 22%;
+    height: 6px;
+    background: #a5a5a5;
 }
 .time-box .needle.sec{
     background: #E47173;
