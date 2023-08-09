@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #353b48;
+}
+.discount{
+    background: #f00;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    line-height: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.discount .number{
+    font-size: 64px;
+    position: relative;
+    transition: .5s;
+}
+.discount .number:before{
+    content: "";
+    position: absolute;
+    background-color: #f00;
+    width: 120%;
+    height: 30%;
+    transform: rotate(-30deg);
+    bottom: -6px;
+    transition: .5s;
+}
+.discount .number:after{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 120%;
+    bottom: 14px;
+    transform: rotate(-30deg);
+    height: 2px;
+    left: 0;
+    transition: .5s;
+}
+.discount .text{
+    font-size: 18px;
+    position: relative;
+    transform: translate(17px, -15px);
+    transition: .5s;
+}
+.discount:hover .number:before,
+.discount:hover .number:after{
+    transform: rotate(-30deg) translateX(100px);
+}
+.discount:hover .number{
+    transform: translate(-24px, 22px);
+}
+.discount:hover .text{
+    font-size: 46px;
+    transform: translate(17px, -35px);
+}
